@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: developer-landing-api
+    runtime: docker
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: TRUST_PROXY_HEADERS
+        value: "true"
+      - key: EMAIL_ENABLED
+        value: "false"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: RATE_LIMIT_HASH_SALT
+        generateValue: true

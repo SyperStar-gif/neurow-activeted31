@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Лендинг backend-разработчика с AI-обработкой обращений">
+  <title>Backend Developer · Contact API</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Python · FastAPI · AI integrations</p>
+      <h1 id="page-title">Backend, который доводит запрос до результата</h1>
+      <p class="lead">
+        Валидация, AI-классификация, SMTP-уведомления, rate limiting,
+        структурированные логи и прозрачный API-контракт.
+      </p>
+      <div class="links">
+        <a href="/docs">Swagger</a>
+        <a href="/api/health">Health</a>
+        <a href="/api/metrics">Metrics</a>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="contact-title">
+      <div class="card-header">
+        <div>
+          <p class="eyebrow">Связаться</p>
+          <h2 id="contact-title">Расскажите о задаче</h2>
+        </div>
+        <span class="badge" id="api-status">API</span>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <div class="grid">
+          <label>
+            Имя
+            <input name="name" autocomplete="name" minlength="2" maxlength="100" required>
+          </label>
+          <label>
+            Телефон
+            <input name="phone" autocomplete="tel" minlength="7" maxlength="25" required>
+          </label>
+        </div>
+        <label>
+          Email
+          <input name="email" type="email" autocomplete="email" required>
+        </label>
+        <label>
+          Комментарий
+          <textarea name="comment" minlength="5" maxlength="3000" rows="6" required></textarea>
+        </label>
+        <button type="submit">Отправить обращение</button>
+        <p id="form-result" class="result" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
